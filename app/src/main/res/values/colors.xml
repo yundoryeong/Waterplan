@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="sky">#48A7C7</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- 테두리 색깔 -->
+    <color name="radius">#5A6169</color>
+    <!-- 부모 레이아웃 배경 색상 -->
+    <color name="parent">#D8E6E7</color>
+    <!-- 텍스트 색상 -->
+    <color name="textColor">#3E4348</color>
+    <!-- 자식 레이아웃 배경 색상 -->
+    <color name="background">#F0FEFF</color>
+    <!-- 요소 색상 -->
+    <color name="element">#9DC3C1</color>
+    <!-- splash 배경색 -->
+    <color name ="splashColor">#002770</color>
+</resources>
