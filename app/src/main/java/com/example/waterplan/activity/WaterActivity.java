@@ -2,15 +2,16 @@ package com.example.waterplan.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Toast;
+import android.widget.TextView;
+
 
 import com.example.waterplan.R;
 
@@ -22,20 +23,27 @@ public class WaterActivity extends AppCompatActivity {
     ImageView imageView4;
     ImageView imageView5;
     EditText editTextNumber;
-
+    TextView textHere;
+EditText text;
     public int goalWater;
-    public int totalWater = 0;
+    public int totalWater =0;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_water);
+
         imageView = findViewById(R.id.imageView);// imageView 변수를 찾기
         imageView2 = findViewById(R.id.imageView2);
         imageView3 = findViewById(R.id.imageView3);
         imageView4 = findViewById(R.id.imageView4);
         imageView5 = findViewById(R.id.imageView5);
         editTextNumber = findViewById(R.id.editTextNumber);
+        textHere = findViewById(R.id.textHere);
+
+
+
         // t1 = findViewById(R.id.changImage1);
 
         Intent intent = getIntent();
@@ -46,14 +54,17 @@ public class WaterActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //if (editTextNumber.text.isEmpty()){
                 String editText = editTextNumber.getText().toString();
 
                 int inputData = Integer.parseInt(editText);
-                setOneleter(inputData);
+                setOneleter(inputData);};
 
-            }
+
 
         });
+        int temp = intent.getIntExtra("goalWater", 0);
+        textHere.setText(String.valueOf(temp));
         Button newButton= findViewById(R.id.newButton);
         newButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +86,14 @@ public class WaterActivity extends AppCompatActivity {
                 finish();
             }
         });
+        Button button2= findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                totalWater = 0;
+                changeImage1();
+            }
+        });
     }
 
 
@@ -88,9 +107,7 @@ public class WaterActivity extends AppCompatActivity {
         imageView5.setVisibility(View.GONE); //안보이게 하기
     }
 
-    public void Button2onClick(View v) {
-        totalWater = 0;
-    }
+    
 
     public void changeImage2() {
         imageView.setVisibility(View.GONE);
@@ -115,7 +132,6 @@ public class WaterActivity extends AppCompatActivity {
         imageView4.setVisibility(View.VISIBLE);
         imageView5.setVisibility(View.GONE);
     }
-
 
 
 

@@ -35,29 +35,29 @@ import java.util.Calendar;
  */
 
 public class LitterActivity extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener  {
-
+    public int goalWater;
     public TextView textView, alarmTextView;
     public Button alarmSetting, alarmCancel;
     public Button button1;
 
     // NotificationHelper 선언
-    private NotificationHelper notificationHelper;
+    public NotificationHelper notificationHelper;
     // 알람 빌더
-    private NotificationCompat.Builder builder;
+    public NotificationCompat.Builder builder;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_litter);
         Intent intent = getIntent();
-        int temp = intent.getIntExtra("goalWater",0);
 
-        textView = (TextView) findViewById(R.id.textView);
+
+
         alarmTextView = (TextView) findViewById(R.id.alarmTextView);
         alarmSetting = (Button) findViewById(R.id.alarmSetting);
         alarmCancel = (Button) findViewById(R.id.alarmCancel);
         button1 = (Button) findViewById(R.id.button1);
-        textView.setText(String.valueOf(temp));
+
 
         // 알람 도우미를 해당 LitterActivity에 지정
         notificationHelper = new NotificationHelper(getApplicationContext());

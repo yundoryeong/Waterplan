@@ -7,18 +7,6 @@
     tools:context=".activity.LitterActivity">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="114dp"
-        android:layout_marginEnd="16dp"
-        android:text="여기에 MainActivity에서 넘어온 값이 들어갑니다."
-        android:textColor="@color/black"
-        android:textSize="18dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/alarmTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
